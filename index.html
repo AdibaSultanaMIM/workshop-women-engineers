@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1089,17 +1090,93 @@
         </div>
     </section>
 
-    <!-- Registration Section -->
-    <section id="registration" class="fade-in" style="text-align: center; padding: 6rem 2rem; background: linear-gradient(135deg, rgba(217, 70, 166, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%); border-radius: 30px; margin: 4rem 2rem;">
-        <h2 style="margin-bottom: 1.5rem;">Ready to Join Us?</h2>
-        <p style="font-size: 1.3rem; color: rgba(248, 250, 252, 0.8); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-            Registration for WE-ICT 2026 is completely free! Join us in empowering women through ICT.
-        </p>
-        <a href="http://buet.ac.bd/cse/HEQEP/workshop/WE-ICT/Registration" target="_blank" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
-            Register Now - It's Free!
-        </a>
-        <p style="margin-top: 2rem; color: rgba(248, 250, 252, 0.6);">Registration Deadline: February 24, 2026</p>
-    </section>
+    
+<!-- Registration Section -->
+<section id="registration" class="fade-in" style="padding: 6rem 2rem; background: linear-gradient(135deg, rgba(217, 70, 166, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%); border-radius: 30px; margin: 4rem 2rem;">
+  <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+    <h2 style="margin-bottom: 0.5rem; text-align: center;">Workshop Registration</h2>
+    <p style="font-size: 1.1rem; color: rgba(248, 250, 252, 0.6); margin-bottom: 3rem; text-align: center;">
+      Join us for WE-ICT 2026 at BUET
+    </p>
+
+    <form action="/api/register" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+      <!-- Full Name -->
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <label style="font-weight: 600; color: var(--light);">Full Name</label>
+        <input
+          type="text"
+          name="name"
+          required
+          placeholder="Enter your full name"
+          style="padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; outline: none; font-size: 1rem;"
+        >
+      </div>
+
+      <!-- Email Address -->
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <label style="font-weight: 600; color: var(--light);">Email Address</label>
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="name@example.com"
+          style="padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; outline: none; font-size: 1rem;"
+        >
+      </div>
+
+      <!-- Phone Number -->
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <label style="font-weight: 600; color: var(--light);">Phone Number</label>
+        <input
+          type="text"
+          name="phone"
+          required
+          placeholder="01XXXXXXXXX"
+          style="padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; outline: none; font-size: 1rem;"
+        >
+      </div>
+
+      <!-- Institution -->
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <label style="font-weight: 600; color: var(--light);">Institution</label>
+        <input
+          type="text"
+          name="institution"
+          required
+          placeholder="University/School name"
+          style="padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; outline: none; font-size: 1rem;"
+        >
+      </div>
+
+      <!-- Select Topic -->
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <label style="font-weight: 600; color: var(--light);">Select Topic</label>
+        <select
+          name="topic"
+          required
+          style="padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15, 23, 42, 0.95); color: white; outline: none; font-size: 1rem; cursor: pointer;"
+        >
+          <option value="" disabled selected>Choose a session...</option>
+          <option value="Higher Studies">Higher Studies</option>
+          <option value="Research Career">Research Career</option>
+          <option value="Industry Skills">Industry Skills</option>
+          <option value="Women in Tech">Women in Tech</option>
+        </select>
+      </div>
+
+      <!-- Register Button -->
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="margin-top: 1.5rem; width: 100%; font-size: 1.2rem; padding: 1.2rem; border: none; cursor: pointer;"
+      >
+        Register Now
+      </button>
+    </form>
+  </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="fade-in">
