@@ -1,17 +1,21 @@
 const mysql = require('mysql2/promise');
 const { Resend } = require('resend');
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// REMOVE the line below from outside the function:
+// const resend = new Resend(process.env.RESEND_API_KEY); 
 
 export default async function handler(req, res) {
+  // MOVE IT INSIDE THE HANDLER
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   if (req.method === 'POST') {
     try {
       const { name, email, phone, institution, topic } = req.body;
-
+      
       // 1. Connect to MySQL
       const connection = await mysql.createConnection(process.env.DATABASE_URL);
 
-      // 2. Insert Data (Matches your Beekeeper table)
+      // 2. Insert Data
       await connection.execute(
         'INSERT INTO registrations (full_name, university_email, phone, institution, topic) VALUES (?, ?, ?, ?, ?)',
         [name, email, phone, institution, topic]
@@ -28,6 +32,7 @@ export default async function handler(req, res) {
       await connection.end();
       return res.status(200).json({ message: 'Success' });
     } catch (error) {
+      console.error(error);
       return res.status(500).json({ error: error.message });
     }
   } else {
